@@ -512,9 +512,9 @@ bool write(std::list<sudoku>* sudoku_list, char const * const filename)
 			{
 				fprintf(file, "%u", tmp->field[i][j]);
 			}
-			fprintf(file, "\n");
+			fprintf(file, "\r\n");
 		}
-		fprintf(file, "\n");
+		fprintf(file, "\r\n");
 
 		sudoku_list->pop_front();
 		tmp = 0;
