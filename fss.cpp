@@ -1,4 +1,5 @@
-/*
+/* ***************************************************************************
+ *
  * Copyright (c) 2012 University of Stuttgart,
  *                    Sergej Geringer, Karsten Schatz, Florian Frieß
  * 
@@ -18,16 +19,19 @@
  * OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, 
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR 
  * OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * ***************************************************************************
  */
 
-/*
+/* ***************************************************************************
+ *
  * this program was written by students in context of the course
  * 'introduction to artificial intelligence' in winter 2012
  * at the University of Stuttgart, 
  * Institute for Visualization and Interactive Systems,
  * given by Prof. Dr.-Ing. Andrés Bruhn.
  * 
- * the goal was write a simple and relatively fast solver for sudokus. 
+ * the goal was to write a simple and relatively fast solver for sudokus. 
  * this implementation uses a recursive strategy, calling for the solve() 
  * function and ensuring consistency of the empty and already filled slots 
  * by keeping track of the possible valid entries. 
@@ -38,6 +42,9 @@
  * strategy and backtracking the way throught the search-graph.
  *
  * contact: geringsj@studi.informatik.uni-stuttgart.de
+ * Source Code at: https://github.com/nireis/fss
+ *
+ * ***************************************************************************
  */
 
 #include <stdio.h>
@@ -547,11 +554,12 @@ int main(int argc, char const ** argv)
 	{
 		i->init();
 		bool result = solve(&*i,0);
-		printf("--> Sudoku %i solving result %i \n", ++counter, result );
+		printf("--> Sudoku %i solved with result %i \n", ++counter, result );
 		if(!result)
 			printf("----> there is most probably no solution for this sudoku \n" );
  		//printf("--> Sudoku result verification %i \n", verify(&*i) );
 	}
+	printf("-> Solving done\n");
 
 	/* write solutions into solution file */
 	if( ! write(&sudokus, "loesung.txt") )
